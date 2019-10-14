@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+cloudinfra:
+  email: cloudinfra@example.com
+  name: cloudinfra
+  password_digest: <%= User.digest('test') %>
+  token: cloudinfra
+
+another_cloudinfra:
+  email: cloudinfra2@example.com
+  name: cloudinfra
+  password_digest: <%= User.digest('test') %>
+  token: another_cloudinfra
+
+fully_other_user:
+  email: other@example.com
+  name: other
+  password_digest: <%= User.digest('test') %>
+  token: fully_other_user
