@@ -41,7 +41,9 @@ class InstancesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_instance
-      @instance = Instance.find(params[:id])
+      if(params[:id] && params[:id].start_with?("i-"))
+        @instance = Instance.find_by(public_uid: params[:id][2..-1])
+      end
     end
 
     # Only allow a trusted parameter "white list" through.
