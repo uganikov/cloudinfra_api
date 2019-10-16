@@ -76,6 +76,9 @@ GEM
     nio4r (2.5.2)
     nokogiri (1.10.4)
       mini_portile2 (~> 2.4.0)
+    orm_adapter (0.5.0)
+    public_uid (1.3.1)
+      orm_adapter (~> 0.5)
     puma (3.12.1)
     rack (2.0.7)
     rack-test (1.1.0)
@@ -137,6 +140,7 @@ DEPENDENCIES
   bootsnap (>= 1.1.0)
   byebug
   listen (>= 3.0.5, < 3.2)
+  public_uid
   puma (~> 3.11)
   rails (~> 5.2.3)
   spring

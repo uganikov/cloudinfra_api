@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_14_122537) do
+ActiveRecord::Schema.define(version: 2019_10_16_094319) do
+
+  create_table "instances", force: :cascade do |t|
+    t.string "public_uid", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["public_uid"], name: "index_instances_on_public_uid", unique: true
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", null: false
