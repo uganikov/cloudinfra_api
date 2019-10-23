@@ -1,0 +1,537 @@
+current directory: /Users/yasu/work/cloudinfra_api/vendor/bundle/ruby/2.5.0/gems/ruby-libvirt-0.7.1/ext/libvirt
+/Users/yasu/.rbenv/versions/2.5.5/bin/ruby -I /Users/yasu/.rbenv/versions/2.5.5/lib/ruby/site_ruby/2.5.0 -r ./siteconf20191023-39092-1qq9p5i.rb extconf.rb
+checking for virNetworkPtr in libvirt/libvirt.h... yes
+checking for virStoragePoolPtr in libvirt/libvirt.h... yes
+checking for virStorageVolPtr in libvirt/libvirt.h... yes
+checking for virSecretPtr in libvirt/libvirt.h... yes
+checking for virNWFilterPtr in libvirt/libvirt.h... yes
+checking for virInterfacePtr in libvirt/libvirt.h... yes
+checking for virDomainBlockInfoPtr in libvirt/libvirt.h... yes
+checking for virDomainMemoryStatPtr in libvirt/libvirt.h... yes
+checking for virDomainSnapshotPtr in libvirt/libvirt.h... yes
+checking for virDomainJobInfoPtr in libvirt/libvirt.h... yes
+checking for virNodeDevicePtr in libvirt/libvirt.h... yes
+checking for virStreamPtr in libvirt/libvirt.h... yes
+checking for virTypedParameterPtr in libvirt/libvirt.h... yes
+checking for virDomainBlockJobInfoPtr in libvirt/libvirt.h... yes
+checking for virStorageVolWipe() in libvirt/libvirt.h... yes
+checking for virStoragePoolIsActive() in libvirt/libvirt.h... yes
+checking for virStoragePoolIsPersistent() in libvirt/libvirt.h... yes
+checking for virStorageVolCreateXMLFrom() in libvirt/libvirt.h... yes
+checking for virConnectGetLibVersion() in libvirt/libvirt.h... yes
+checking for virConnectIsEncrypted() in libvirt/libvirt.h... yes
+checking for virConnectIsSecure() in libvirt/libvirt.h... yes
+checking for virNetworkIsActive() in libvirt/libvirt.h... yes
+checking for virNetworkIsPersistent() in libvirt/libvirt.h... yes
+checking for virNodeDeviceCreateXML() in libvirt/libvirt.h... yes
+checking for virNodeDeviceDestroy() in libvirt/libvirt.h... yes
+checking for virInterfaceIsActive() in libvirt/libvirt.h... yes
+checking for virDomainMigrateToURI() in libvirt/libvirt.h... yes
+checking for virDomainMigrateSetMaxDowntime() in libvirt/libvirt.h... yes
+checking for virDomainManagedSave() in libvirt/libvirt.h... yes
+checking for virDomainIsActive() in libvirt/libvirt.h... yes
+checking for virDomainIsPersistent() in libvirt/libvirt.h... yes
+checking for virConnectDomainXMLFromNative() in libvirt/libvirt.h... yes
+checking for virConnectDomainXMLToNative() in libvirt/libvirt.h... yes
+checking for virDomainCreateWithFlags() in libvirt/libvirt.h... yes
+checking for virDomainAttachDeviceFlags() in libvirt/libvirt.h... yes
+checking for virDomainDetachDeviceFlags() in libvirt/libvirt.h... yes
+checking for virDomainUpdateDeviceFlags() in libvirt/libvirt.h... yes
+checking for virNodeGetSecurityModel() in libvirt/libvirt.h... yes
+checking for virDomainCreateXML() in libvirt/libvirt.h... yes
+checking for virDomainGetSecurityLabel() in libvirt/libvirt.h... yes
+checking for virConnectCompareCPU() in libvirt/libvirt.h... yes
+checking for virConnectBaselineCPU() in libvirt/libvirt.h... yes
+checking for virDomainSetVcpusFlags() in libvirt/libvirt.h... yes
+checking for virDomainGetVcpusFlags() in libvirt/libvirt.h... yes
+checking for virConnectDomainEventRegisterAny() in libvirt/libvirt.h... yes
+checking for virConnectDomainEventRegister() in libvirt/libvirt.h... yes
+checking for virDomainBlockPeek() in libvirt/libvirt.h... yes
+checking for virDomainMemoryPeek() in libvirt/libvirt.h... yes
+checking for virConnectOpenAuth() in libvirt/libvirt.h... yes
+checking for virEventRegisterImpl() in libvirt/libvirt.h... yes
+checking for virDomainIsUpdated() in libvirt/libvirt.h... yes
+checking for virDomainSetMemoryParameters() in libvirt/libvirt.h... yes
+checking for virConnectGetSysinfo() in libvirt/libvirt.h... yes
+checking for virDomainSetBlkioParameters() in libvirt/libvirt.h... yes
+checking for virDomainSetMemoryFlags() in libvirt/libvirt.h... yes
+checking for virDomainGetState() in libvirt/libvirt.h... yes
+checking for virDomainOpenConsole() in libvirt/libvirt.h... yes
+checking for virDomainMigrate2() in libvirt/libvirt.h... yes
+checking for virDomainScreenshot() in libvirt/libvirt.h... yes
+checking for virInterfaceChangeBegin() in libvirt/libvirt.h... yes
+checking for virStorageVolDownload() in libvirt/libvirt.h... yes
+checking for virDomainInjectNMI() in libvirt/libvirt.h... yes
+checking for virDomainGetControlInfo() in libvirt/libvirt.h... yes
+checking for virDomainMigrateGetMaxSpeed() in libvirt/libvirt.h... yes
+checking for virNodeGetCPUStats() in libvirt/libvirt.h... yes
+checking for virNodeGetMemoryStats() in libvirt/libvirt.h... yes
+checking for virDomainDestroyFlags() in libvirt/libvirt.h... yes
+checking for virDomainSaveFlags() in libvirt/libvirt.h... yes
+checking for virDomainSaveImageGetXMLDesc() in libvirt/libvirt.h... yes
+checking for virDomainSendKey() in libvirt/libvirt.h... yes
+checking for virNetworkUpdate() in libvirt/libvirt.h... yes
+checking for virNodeSuspendForDuration() in libvirt/libvirt.h... yes
+checking for virNodeGetMemoryParameters() in libvirt/libvirt.h... yes
+checking for virNodeGetCPUMap() in libvirt/libvirt.h... yes
+checking for virDomainUndefineFlags() in libvirt/libvirt.h... yes
+checking for virDomainPinVcpuFlags() in libvirt/libvirt.h... yes
+checking for virDomainGetVcpuPinInfo() in libvirt/libvirt.h... yes
+checking for virDomainSnapshotGetName() in libvirt/libvirt.h... yes
+checking for virConnectSetKeepAlive() in libvirt/libvirt.h... yes
+checking for virDomainReset() in libvirt/libvirt.h... yes
+checking for virDomainShutdownFlags() in libvirt/libvirt.h... yes
+checking for virDomainGetHostname() in libvirt/libvirt.h... yes
+checking for virDomainGetMetadata() in libvirt/libvirt.h... yes
+checking for virDomainSetMetadata() in libvirt/libvirt.h... yes
+checking for virConnectListAllDomains() in libvirt/libvirt.h... yes
+checking for virConnectListAllNetworks() in libvirt/libvirt.h... yes
+checking for virConnectListAllInterfaces() in libvirt/libvirt.h... yes
+checking for virConnectListAllSecrets() in libvirt/libvirt.h... yes
+checking for virConnectListAllNodeDevices() in libvirt/libvirt.h... yes
+checking for virConnectListAllStoragePools() in libvirt/libvirt.h... yes
+checking for virConnectListAllNWFilters() in libvirt/libvirt.h... yes
+checking for virConnectIsAlive() in libvirt/libvirt.h... yes
+checking for virNodeDeviceDetachFlags() in libvirt/libvirt.h... yes
+checking for virDomainSendProcessSignal() in libvirt/libvirt.h... yes
+checking for virDomainListAllSnapshots() in libvirt/libvirt.h... yes
+checking for virDomainSnapshotNumChildren() in libvirt/libvirt.h... yes
+checking for virDomainSnapshotListChildrenNames() in libvirt/libvirt.h... yes
+checking for virDomainSnapshotListAllChildren() in libvirt/libvirt.h... yes
+checking for virDomainSnapshotGetParent() in libvirt/libvirt.h... yes
+checking for virDomainSnapshotIsCurrent() in libvirt/libvirt.h... yes
+checking for virDomainSnapshotHasMetadata() in libvirt/libvirt.h... yes
+checking for virDomainSetMemoryStatsPeriod() in libvirt/libvirt.h... yes
+checking for virDomainFSTrim() in libvirt/libvirt.h... yes
+checking for virDomainBlockRebase() in libvirt/libvirt.h... yes
+checking for virDomainOpenChannel() in libvirt/libvirt.h... yes
+checking for virNodeDeviceLookupSCSIHostByWWN() in libvirt/libvirt.h... yes
+checking for virStorageVolWipePattern() in libvirt/libvirt.h... yes
+checking for virStoragePoolListAllVolumes() in libvirt/libvirt.h... yes
+checking for virDomainCreateWithFiles() in libvirt/libvirt.h... yes
+checking for virDomainCreateXMLWithFiles() in libvirt/libvirt.h... yes
+checking for virDomainOpenGraphics() in libvirt/libvirt.h... yes
+checking for virStorageVolResize() in libvirt/libvirt.h... yes
+checking for virDomainPMWakeup() in libvirt/libvirt.h... yes
+checking for virDomainBlockResize() in libvirt/libvirt.h... yes
+checking for virDomainPMSuspendForDuration() in libvirt/libvirt.h... yes
+checking for virDomainMigrateGetCompressionCache() in libvirt/libvirt.h... yes
+checking for virDomainMigrateSetCompressionCache() in libvirt/libvirt.h... yes
+checking for virDomainGetDiskErrors() in libvirt/libvirt.h... yes
+checking for virDomainGetEmulatorPinInfo() in libvirt/libvirt.h... yes
+checking for virDomainPinEmulator() in libvirt/libvirt.h... yes
+checking for virDomainGetSecurityLabelList() in libvirt/libvirt.h... yes
+checking for virDomainGetJobStats() in libvirt/libvirt.h... yes
+checking for virDomainGetBlockIoTune() in libvirt/libvirt.h... yes
+checking for virDomainSetBlockIoTune() in libvirt/libvirt.h... yes
+checking for virDomainBlockCommit() in libvirt/libvirt.h... yes
+checking for virDomainBlockPull() in libvirt/libvirt.h... yes
+checking for virDomainBlockJobSetSpeed() in libvirt/libvirt.h... yes
+checking for virDomainGetBlockJobInfo() in libvirt/libvirt.h... yes
+checking for virDomainBlockJobAbort() in libvirt/libvirt.h... yes
+checking for virDomainGetInterfaceParameters() in libvirt/libvirt.h... yes
+checking for virDomainBlockStatsFlags() in libvirt/libvirt.h... yes
+checking for virDomainGetNumaParameters() in libvirt/libvirt.h... yes
+checking for virConnectGetCPUModelNames() in libvirt/libvirt.h... yes
+checking for virDomainMigrate3() in libvirt/libvirt.h... yes
+checking for virDomainGetCPUStats() in libvirt/libvirt.h... yes
+checking for virNetworkGetDHCPLeases() in libvirt/libvirt.h... yes
+checking for virNodeAllocPages() in libvirt/libvirt.h... yes
+checking for virDomainGetTime() in libvirt/libvirt.h... yes
+checking for virDomainSetTime() in libvirt/libvirt.h... yes
+checking for virConnectGetDomainCapabilities() in libvirt/libvirt.h... yes
+checking for virDomainCoreDumpWithFormat() in libvirt/libvirt.h... yes
+checking for virDomainFSFreeze() in libvirt/libvirt.h... yes
+checking for virDomainFSThaw() in libvirt/libvirt.h... yes
+checking for virDomainGetFSInfo() in libvirt/libvirt.h... yes
+checking for virNodeGetFreePages() in libvirt/libvirt.h... yes
+checking for virDomainDefineXMLFlags() in libvirt/libvirt.h... yes
+checking for virDomainRename() in libvirt/libvirt.h... yes
+checking for virDomainSetUserPassword() in libvirt/libvirt.h... yes
+checking for VIR_MIGRATE_LIVE in libvirt/libvirt.h... yes
+checking for VIR_MIGRATE_PEER2PEER in libvirt/libvirt.h... yes
+checking for VIR_MIGRATE_TUNNELLED in libvirt/libvirt.h... yes
+checking for VIR_MIGRATE_PERSIST_DEST in libvirt/libvirt.h... yes
+checking for VIR_MIGRATE_UNDEFINE_SOURCE in libvirt/libvirt.h... yes
+checking for VIR_MIGRATE_PAUSED in libvirt/libvirt.h... yes
+checking for VIR_MIGRATE_NON_SHARED_DISK in libvirt/libvirt.h... yes
+checking for VIR_MIGRATE_NON_SHARED_INC in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_XML_UPDATE_CPU in libvirt/libvirt.h... yes
+checking for VIR_MEMORY_PHYSICAL in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_START_PAUSED in libvirt/libvirt.h... yes
+checking for VIR_DUMP_CRASH in libvirt/libvirt.h... yes
+checking for VIR_DUMP_LIVE in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_DEVICE_MODIFY_CURRENT in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_DEVICE_MODIFY_LIVE in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_DEVICE_MODIFY_CONFIG in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_DEVICE_MODIFY_FORCE in libvirt/libvirt.h... yes
+checking for VIR_INTERFACE_XML_INACTIVE in libvirt/libvirt.h... yes
+checking for VIR_STORAGE_POOL_INACCESSIBLE in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_EVENT_DEFINED in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_EVENT_STARTED in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_EVENT_SUSPENDED_IOERROR in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_EVENT_ID_WATCHDOG in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_EVENT_ID_IO_ERROR in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_EVENT_ID_GRAPHICS in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_EVENT_ID_REBOOT in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_EVENT_ID_RTC_CHANGE in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_EVENT_ID_IO_ERROR_REASON in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_AFFECT_CURRENT in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_MEM_CURRENT in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_EVENT_ID_CONTROL_ERROR in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_PAUSED_SHUTTING_DOWN in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_START_AUTODESTROY in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_START_BYPASS_CACHE in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_START_FORCE_BOOT in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_MEMORY_STAT_ACTUAL_BALLOON in libvirt/libvirt.h... yes
+checking for VIR_DUMP_BYPASS_CACHE in libvirt/libvirt.h... yes
+checking for VIR_MIGRATE_CHANGE_PROTECTION in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_SAVE_BYPASS_CACHE in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_SAVE_RUNNING in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_SAVE_PAUSED in libvirt/libvirt.h... yes
+checking for VIR_NETWORK_UPDATE_COMMAND_NONE in libvirt/libvirt.h... yes
+checking for VIR_NETWORK_UPDATE_COMMAND_MODIFY in libvirt/libvirt.h... yes
+checking for VIR_NETWORK_UPDATE_COMMAND_DELETE in libvirt/libvirt.h... yes
+checking for VIR_NETWORK_UPDATE_COMMAND_ADD_LAST in libvirt/libvirt.h... yes
+checking for VIR_NETWORK_UPDATE_COMMAND_ADD_FIRST in libvirt/libvirt.h... yes
+checking for VIR_NETWORK_SECTION_NONE in libvirt/libvirt.h... yes
+checking for VIR_NETWORK_SECTION_BRIDGE in libvirt/libvirt.h... yes
+checking for VIR_NETWORK_SECTION_DOMAIN in libvirt/libvirt.h... yes
+checking for VIR_NETWORK_SECTION_IP in libvirt/libvirt.h... yes
+checking for VIR_NETWORK_SECTION_IP_DHCP_HOST in libvirt/libvirt.h... yes
+checking for VIR_NETWORK_SECTION_IP_DHCP_RANGE in libvirt/libvirt.h... yes
+checking for VIR_NETWORK_SECTION_FORWARD in libvirt/libvirt.h... yes
+checking for VIR_NETWORK_SECTION_FORWARD_INTERFACE in libvirt/libvirt.h... yes
+checking for VIR_NETWORK_SECTION_FORWARD_PF in libvirt/libvirt.h... yes
+checking for VIR_NETWORK_SECTION_PORTGROUP in libvirt/libvirt.h... yes
+checking for VIR_NETWORK_SECTION_DNS_HOST in libvirt/libvirt.h... yes
+checking for VIR_NETWORK_SECTION_DNS_TXT in libvirt/libvirt.h... yes
+checking for VIR_NETWORK_SECTION_DNS_SRV in libvirt/libvirt.h... yes
+checking for VIR_NETWORK_UPDATE_AFFECT_CURRENT in libvirt/libvirt.h... yes
+checking for VIR_NETWORK_UPDATE_AFFECT_LIVE in libvirt/libvirt.h... yes
+checking for VIR_NETWORK_UPDATE_AFFECT_CONFIG in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_PMSUSPENDED in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_RUNNING_WAKEUP in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_PMSUSPENDED_UNKNOWN in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_UNDEFINE_MANAGED_SAVE in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_UNDEFINE_SNAPSHOTS_METADATA in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_PAUSED_SNAPSHOT in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_PMSUSPENDED_DISK_UNKNOWN in libvirt/libvirt.h... yes
+checking for VIR_DUMP_RESET in libvirt/libvirt.h... yes
+checking for VIR_DUMP_MEMORY_ONLY in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_SHUTDOWN_DEFAULT in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_SHUTDOWN_ACPI_POWER_BTN in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_SHUTDOWN_GUEST_AGENT in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_SHUTDOWN_INITCTL in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_SHUTDOWN_SIGNAL in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_REBOOT_DEFAULT in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_REBOOT_ACPI_POWER_BTN in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_REBOOT_GUEST_AGENT in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_REBOOT_INITCTL in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_REBOOT_SIGNAL in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_DESTROY_DEFAULT in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_DESTROY_GRACEFUL in libvirt/libvirt.h... yes
+checking for VIR_CONNECT_LIST_NODE_DEVICES_CAP_FC_HOST in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_SNAPSHOT_LIST_INACTIVE in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_SNAPSHOT_CREATE_REDEFINE in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_SNAPSHOT_CREATE_LIVE in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_BLOCK_REBASE_SHALLOW in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_BLOCK_REBASE_REUSE_EXT in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_BLOCK_REBASE_COPY_RAW in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_BLOCK_REBASE_COPY in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_CHANNEL_FORCE in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_CONSOLE_FORCE in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_CONSOLE_SAFE in libvirt/libvirt.h... yes
+checking for VIR_STORAGE_VOL_WIPE_ALG_ZERO in libvirt/libvirt.h... yes
+checking for VIR_STORAGE_VOL_WIPE_ALG_NNSA in libvirt/libvirt.h... yes
+checking for VIR_STORAGE_VOL_WIPE_ALG_DOD in libvirt/libvirt.h... yes
+checking for VIR_STORAGE_VOL_WIPE_ALG_BSI in libvirt/libvirt.h... yes
+checking for VIR_STORAGE_VOL_WIPE_ALG_GUTMANN in libvirt/libvirt.h... yes
+checking for VIR_STORAGE_VOL_WIPE_ALG_SCHNEIER in libvirt/libvirt.h... yes
+checking for VIR_STORAGE_VOL_WIPE_ALG_PFITZNER7 in libvirt/libvirt.h... yes
+checking for VIR_STORAGE_VOL_WIPE_ALG_PFITZNER33 in libvirt/libvirt.h... yes
+checking for VIR_STORAGE_VOL_WIPE_ALG_RANDOM in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_BLOCK_RESIZE_BYTES in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_MEMORY_STAT_RSS in libvirt/libvirt.h... yes
+checking for VIR_MIGRATE_UNSAFE in libvirt/libvirt.h... yes
+checking for VIR_MIGRATE_OFFLINE in libvirt/libvirt.h... yes
+checking for VIR_MIGRATE_COMPRESSED in libvirt/libvirt.h... yes
+checking for VIR_MIGRATE_ABORT_ON_ERROR in libvirt/libvirt.h... yes
+checking for VIR_CONNECT_NO_ALIASES in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_XML_MIGRATABLE in libvirt/libvirt.h... yes
+checking for VIR_NETWORK_XML_INACTIVE in libvirt/libvirt.h... yes
+checking for VIR_STORAGE_VOL_DIR in libvirt/libvirt.h... yes
+checking for VIR_STORAGE_VOL_NETWORK in libvirt/libvirt.h... yes
+checking for VIR_STORAGE_XML_INACTIVE in libvirt/libvirt.h... yes
+checking for VIR_STORAGE_VOL_CREATE_PREALLOC_METADATA in libvirt/libvirt.h... yes
+checking for VIR_SECRET_USAGE_TYPE_CEPH in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_SNAPSHOT_REVERT_RUNNING in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_SNAPSHOT_REVERT_PAUSED in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_SNAPSHOT_REVERT_FORCE in libvirt/libvirt.h... yes
+checking for VIR_SECRET_USAGE_TYPE_ISCSI in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_NOSTATE_UNKNOWN in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_RUNNING_CRASHED in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_PAUSED_CRASHED in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_CRASHED_PANICKED in libvirt/libvirt.h... yes
+checking for VIR_NODE_CPU_STATS_ALL_CPUS in libvirt/libvirt.h... yes
+checking for VIR_NODE_MEMORY_STATS_ALL_CELLS in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_VCPU_CURRENT in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_VCPU_GUEST in libvirt/libvirt.h... yes
+checking for VIR_NETWORK_UPDATE_COMMAND_DELETE in libvirt/libvirt.h... yes
+checking for VIR_STORAGE_POOL_BUILD_NO_OVERWRITE in libvirt/libvirt.h... yes
+checking for VIR_STORAGE_POOL_BUILD_OVERWRITE in libvirt/libvirt.h... yes
+checking for VIR_KEYCODE_SET_LINUX in libvirt/libvirt.h... yes
+checking for VIR_KEYCODE_SET_XT in libvirt/libvirt.h... yes
+checking for VIR_KEYCODE_SET_ATSET1 in libvirt/libvirt.h... yes
+checking for VIR_KEYCODE_SET_ATSET2 in libvirt/libvirt.h... yes
+checking for VIR_KEYCODE_SET_ATSET3 in libvirt/libvirt.h... yes
+checking for VIR_KEYCODE_SET_OSX in libvirt/libvirt.h... yes
+checking for VIR_KEYCODE_SET_XT_KBD in libvirt/libvirt.h... yes
+checking for VIR_KEYCODE_SET_USB in libvirt/libvirt.h... yes
+checking for VIR_KEYCODE_SET_WIN32 in libvirt/libvirt.h... yes
+checking for VIR_KEYCODE_SET_RFB in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_EVENT_SHUTDOWN in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_EVENT_PMSUSPENDED in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_EVENT_CRASHED in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_EVENT_STARTED_WAKEUP in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_EVENT_SUSPENDED_RESTORED in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_EVENT_SUSPENDED_FROM_SNAPSHOT in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_EVENT_SUSPENDED_API_ERROR in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_EVENT_RESUMED_FROM_SNAPSHOT in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_EVENT_SHUTDOWN_FINISHED in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_EVENT_PMSUSPENDED_MEMORY in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_EVENT_PMSUSPENDED_DISK in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_EVENT_CRASHED_PANICKED in libvirt/libvirt.h... yes
+checking for VIR_SECRET_USAGE_TYPE_NONE in libvirt/libvirt.h... yes
+checking for VIR_CONNECT_BASELINE_CPU_EXPAND_FEATURES in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_SNAPSHOT_DELETE_METADATA_ONLY in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_SNAPSHOT_DELETE_CHILDREN_ONLY in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_EVENT_GRAPHICS_ADDRESS_UNIX in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_BLOCK_COMMIT_SHALLOW in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_BLOCK_COMMIT_DELETE in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_BLOCK_JOB_TYPE_UNKNOWN in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_BLOCK_JOB_TYPE_PULL in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_BLOCK_JOB_TYPE_COPY in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_BLOCK_JOB_TYPE_COMMIT in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_BLOCK_JOB_ABORT_ASYNC in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_BLOCK_JOB_ABORT_PIVOT in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_BLOCK_JOB_COMPLETED in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_BLOCK_JOB_FAILED in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_BLOCK_JOB_CANCELED in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_BLOCK_JOB_READY in libvirt/libvirt.h... yes
+checking for VIR_NODE_MEMORY_SHARED_MERGE_ACROSS_NODES in libvirt/libvirt.h... no
+checking for VIR_CONNECT_LIST_NODE_DEVICES_CAP_SCSI_GENERIC in libvirt/libvirt.h... yes
+checking for VIR_MIGRATE_PARAM_LISTEN_ADDRESS in libvirt/libvirt.h... no
+checking for VIR_DOMAIN_SCHEDULER_EMULATOR_PERIOD in libvirt/libvirt.h... no
+checking for VIR_DOMAIN_SCHEDULER_EMULATOR_QUOTA in libvirt/libvirt.h... no
+checking for VIR_DOMAIN_SNAPSHOT_CREATE_REUSE_EXT in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_SNAPSHOT_CREATE_QUIESCE in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_SNAPSHOT_CREATE_ATOMIC in libvirt/libvirt.h... yes
+checking for VIR_CONNECT_LIST_STORAGE_POOLS_GLUSTER in libvirt/libvirt.h... yes
+checking for VIR_CONNECT_LIST_STORAGE_POOLS_ZFS in libvirt/libvirt.h... yes
+checking for VIR_STORAGE_VOL_NETDIR in libvirt/libvirt.h... yes
+checking for VIR_IP_ADDR_TYPE_IPV4 in libvirt/libvirt.h... yes
+checking for VIR_IP_ADDR_TYPE_IPV6 in libvirt/libvirt.h... yes
+checking for VIR_CONNECT_COMPARE_CPU_FAIL_INCOMPATIBLE in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_UNDEFINE_NVRAM in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_BLOCK_JOB_TYPE_ACTIVE_COMMIT in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_BLOCK_JOB_INFO_BANDWIDTH_BYTES in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_BLOCK_JOB_SPEED_BANDWIDTH_BYTES in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_BLOCK_COMMIT_ACTIVE in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_BLOCK_COMMIT_RELATIVE in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_BLOCK_COMMIT_BANDWIDTH_BYTES in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_BLOCK_IOTUNE_SIZE_IOPS_SEC in libvirt/libvirt.h... no
+checking for VIR_STORAGE_POOL_CREATE_NORMAL in libvirt/libvirt.h... yes
+checking for VIR_STORAGE_POOL_CREATE_WITH_BUILD in libvirt/libvirt.h... yes
+checking for VIR_STORAGE_POOL_CREATE_WITH_BUILD_OVERWRITE in libvirt/libvirt.h... yes
+checking for VIR_STORAGE_POOL_CREATE_WITH_BUILD_NO_OVERWRITE in libvirt/libvirt.h... yes
+checking for VIR_STORAGE_VOL_CREATE_REFLINK in libvirt/libvirt.h... yes
+checking for VIR_STORAGE_VOL_DELETE_WITH_SNAPSHOTS in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_QEMU_AGENT_COMMAND_SHUTDOWN in libvirt/libvirt.h... no
+checking for VIR_DOMAIN_DEFINE_VALIDATE in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_PASSWORD_ENCRYPTED in libvirt/libvirt.h... yes
+checking for VIR_DOMAIN_TIME_SYNC in libvirt/libvirt.h... yes
+checking for VIR_FROM_VMWARE in libvirt/virterror.h... yes
+checking for VIR_FROM_AUDIT in libvirt/virterror.h... yes
+checking for VIR_FROM_SYSINFO in libvirt/virterror.h... yes
+checking for VIR_FROM_STREAMS in libvirt/virterror.h... yes
+checking for VIR_FROM_XENAPI in libvirt/virterror.h... yes
+checking for VIR_FROM_HOOK in libvirt/virterror.h... yes
+checking for VIR_ERR_HOOK_SCRIPT_FAILED in libvirt/virterror.h... yes
+checking for VIR_ERR_MIGRATE_PERSIST_FAILED in libvirt/virterror.h... yes
+checking for VIR_ERR_OPERATION_TIMEOUT in libvirt/virterror.h... yes
+checking for VIR_ERR_CONFIG_UNSUPPORTED in libvirt/virterror.h... yes
+checking for VIR_FROM_XENXM in libvirt/virterror.h... yes
+checking for VIR_ERR_OPERATION_INVALID in libvirt/virterror.h... yes
+checking for VIR_ERR_NO_SECURITY_MODEL in libvirt/virterror.h... yes
+checking for VIR_ERR_AUTH_FAILED in libvirt/virterror.h... yes
+checking for VIR_FROM_PHYP in libvirt/virterror.h... yes
+checking for VIR_FROM_ESX in libvirt/virterror.h... yes
+checking for VIR_FROM_ONE in libvirt/virterror.h... yes
+checking for VIR_FROM_VBOX in libvirt/virterror.h... yes
+checking for VIR_FROM_LXC in libvirt/virterror.h... yes
+checking for VIR_FROM_UML in libvirt/virterror.h... yes
+checking for VIR_FROM_NETWORK in libvirt/virterror.h... yes
+checking for VIR_FROM_DOMAIN in libvirt/virterror.h... yes
+checking for VIR_FROM_STATS_LINUX in libvirt/virterror.h... yes
+checking for VIR_FROM_XEN_INOTIFY in libvirt/virterror.h... yes
+checking for VIR_FROM_SECURITY in libvirt/virterror.h... yes
+checking for VIR_DOMAIN_CORE_DUMP_FORMAT_RAW in libvirt/virterror.h... yes
+checking for VIR_DOMAIN_CORE_DUMP_FORMAT_KDUMP_ZLIB in libvirt/virterror.h... yes
+checking for VIR_DOMAIN_CORE_DUMP_FORMAT_KDUMP_LZO in libvirt/virterror.h... yes
+checking for VIR_DOMAIN_CORE_DUMP_FORMAT_KDUMP_SNAPPY in libvirt/virterror.h... yes
+checking for VIR_MIGRATE_AUTO_CONVERGE in libvirt/virterror.h... yes
+checking for VIR_MIGRATE_RDMA_PIN_ALL in libvirt/virterror.h... yes
+checking for VIR_DOMAIN_SHUTDOWN_PARAVIRT in libvirt/virterror.h... yes
+checking for VIR_DOMAIN_REBOOT_PARAVIRT in libvirt/virterror.h... yes
+checking for libvirt/libvirt-qemu.h... yes
+checking for virDomainQemuMonitorCommand() in -lvirt-qemu... yes
+checking for virDomainQemuMonitorCommand() in libvirt/libvirt-qemu.h... yes
+checking for virDomainQemuAttach() in libvirt/libvirt-qemu.h... yes
+checking for virDomainQemuAgentCommand() in libvirt/libvirt-qemu.h... yes
+checking for VIR_DOMAIN_QEMU_AGENT_COMMAND_BLOCK in libvirt/libvirt-qemu.h... yes
+checking for VIR_DOMAIN_QEMU_AGENT_COMMAND_DEFAULT in libvirt/libvirt-qemu.h... yes
+checking for VIR_DOMAIN_QEMU_AGENT_COMMAND_NOWAIT in libvirt/libvirt-qemu.h... yes
+checking for VIR_DOMAIN_QEMU_MONITOR_COMMAND_DEFAULT in libvirt/libvirt-qemu.h... yes
+checking for VIR_DOMAIN_QEMU_MONITOR_COMMAND_HMP in libvirt/libvirt-qemu.h... yes
+checking for libvirt/libvirt-lxc.h... yes
+checking for virDomainLxcOpenNamespace() in -lvirt-lxc... yes
+checking for virDomainLxcOpenNamespace() in libvirt/libvirt-lxc.h... yes
+checking for virDomainLxcEnterNamespace() in libvirt/libvirt-lxc.h... yes
+checking for virDomainLxcEnterSecurityLabel() in libvirt/libvirt-lxc.h... yes
+creating extconf.h
+creating Makefile
+
+current directory: /Users/yasu/work/cloudinfra_api/vendor/bundle/ruby/2.5.0/gems/ruby-libvirt-0.7.1/ext/libvirt
+make "DESTDIR=" clean
+
+current directory: /Users/yasu/work/cloudinfra_api/vendor/bundle/ruby/2.5.0/gems/ruby-libvirt-0.7.1/ext/libvirt
+make "DESTDIR="
+compiling _libvirt.c
+_libvirt.c:176:33: warning: implicit conversion loses integer precision: 'unsigned long' to 'unsigned int' [-Wshorten-64-to-32]
+            cred[i].resultlen = strlen(cred[i].result);
+                              ~ ^~~~~~~~~~~~~~~~~~~~~~
+_libvirt.c:234:31: warning: implicit conversion loses integer precision: 'long' to 'unsigned int' [-Wshorten-64-to-32]
+            auth->ncredtype = RARRAY_LEN(credlist);
+                            ~ ^~~~~~~~~~~~~~~~~~~~
+/Users/yasu/.rbenv/versions/2.5.5/include/ruby-2.5.0/ruby/ruby.h:1021:23: note: expanded from macro 'RARRAY_LEN'
+#define RARRAY_LEN(a) rb_array_len(a)
+                      ^~~~~~~~~~~~~~~
+2 warnings generated.
+compiling common.c
+In file included from common.c:27:
+/Users/yasu/.rbenv/versions/2.5.5/include/ruby-2.5.0/ruby/backward/st.h:2:2: warning: use "ruby/st.h" instead of bare "st.h" [-W#warnings]
+#warning use "ruby/st.h" instead of bare "st.h"
+ ^
+1 warning generated.
+compiling connect.c
+connect.c:476:13: warning: implicit conversion loses integer precision: 'long' to 'unsigned int' [-Wshorten-64-to-32]
+    ncpus = RARRAY_LEN(xmlcpus);
+          ~ ^~~~~~~~~~~~~~~~~~~
+/Users/yasu/.rbenv/versions/2.5.5/include/ruby-2.5.0/ruby/ruby.h:1021:23: note: expanded from macro 'RARRAY_LEN'
+#define RARRAY_LEN(a) rb_array_len(a)
+                      ^~~~~~~~~~~~~~~
+connect.c:2578:20: warning: implicit conversion loses integer precision: 'long' to 'unsigned int' [-Wshorten-64-to-32]
+        numfiles = RARRAY_LEN(fds);
+                 ~ ^~~~~~~~~~~~~~~
+/Users/yasu/.rbenv/versions/2.5.5/include/ruby-2.5.0/ruby/ruby.h:1021:23: note: expanded from macro 'RARRAY_LEN'
+#define RARRAY_LEN(a) rb_array_len(a)
+                      ^~~~~~~~~~~~~~~
+connect.c:2701:16: warning: implicit conversion loses integer precision: 'long' to 'int' [-Wshorten-64-to-32]
+    arraylen = RARRAY_LEN(page_arr);
+             ~ ^~~~~~~~~~~~~~~~~~~~
+/Users/yasu/.rbenv/versions/2.5.5/include/ruby-2.5.0/ruby/ruby.h:1021:23: note: expanded from macro 'RARRAY_LEN'
+#define RARRAY_LEN(a) rb_array_len(a)
+                      ^~~~~~~~~~~~~~~
+connect.c:2794:14: warning: implicit conversion loses integer precision: 'long' to 'unsigned int' [-Wshorten-64-to-32]
+    npages = RARRAY_LEN(pageArr);
+           ~ ^~~~~~~~~~~~~~~~~~~
+/Users/yasu/.rbenv/versions/2.5.5/include/ruby-2.5.0/ruby/ruby.h:1021:23: note: expanded from macro 'RARRAY_LEN'
+#define RARRAY_LEN(a) rb_array_len(a)
+                      ^~~~~~~~~~~~~~~
+4 warnings generated.
+compiling domain.c
+In file included from domain.c:26:
+/Users/yasu/.rbenv/versions/2.5.5/include/ruby-2.5.0/ruby/backward/st.h:2:2: warning: use "ruby/st.h" instead of bare "st.h" [-W#warnings]
+#warning use "ruby/st.h" instead of bare "st.h"
+ ^
+domain.c:2330:36: warning: implicit conversion loses integer precision: 'long' to 'int' [-Wshorten-64-to-32]
+                                   RARRAY_LEN(keycodes), 0);
+                                   ^~~~~~~~~~~~~~~~~~~~~~~~
+/Users/yasu/.rbenv/versions/2.5.5/include/ruby-2.5.0/ruby/ruby.h:1021:23: note: expanded from macro 'RARRAY_LEN'
+#define RARRAY_LEN(a) rb_array_len(a)
+                      ^
+./common.h:86:26: note: expanded from macro 'ruby_libvirt_generate_call_nil'
+        _r_##func = func(args);                                           \
+                    ~~~~ ^~~~
+domain.c:2807:20: warning: implicit conversion loses integer precision: 'long' to 'unsigned int' [-Wshorten-64-to-32]
+        numfiles = RARRAY_LEN(fds);
+                 ~ ^~~~~~~~~~~~~~~
+/Users/yasu/.rbenv/versions/2.5.5/include/ruby-2.5.0/ruby/ruby.h:1021:23: note: expanded from macro 'RARRAY_LEN'
+#define RARRAY_LEN(a) rb_array_len(a)
+                      ^~~~~~~~~~~~~~~
+domain.c:3031:39: warning: implicit conversion loses integer precision: 'size_t' (aka 'unsigned long') to 'int' [-Wshorten-64-to-32]
+                                      cpumaplen,
+                                      ^~~~~~~~~
+domain.c:3827:38: warning: implicit conversion loses integer precision: 'long' to 'unsigned int' [-Wshorten-64-to-32]
+                                     RARRAY_LEN(fds), fdlist, &noldfdlist,
+                                     ^~~~~~~~~~~~~~~
+/Users/yasu/.rbenv/versions/2.5.5/include/ruby-2.5.0/ruby/ruby.h:1021:23: note: expanded from macro 'RARRAY_LEN'
+#define RARRAY_LEN(a) rb_array_len(a)
+                      ^~~~~~~~~~~~~~~
+domain.c:3956:36: warning: implicit conversion loses integer precision: 'unsigned long' to 'unsigned int' [-Wshorten-64-to-32]
+                                   ruby_libvirt_value_to_ulong(flags));
+                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./common.h:86:26: note: expanded from macro 'ruby_libvirt_generate_call_nil'
+        _r_##func = func(args);                                           \
+                    ~~~~ ^~~~
+domain.c:4153:24: warning: implicit conversion loses integer precision: 'long' to 'unsigned int' [-Wshorten-64-to-32]
+        nmountpoints = RARRAY_LEN(mountpoints);
+                     ~ ^~~~~~~~~~~~~~~~~~~~~~~
+/Users/yasu/.rbenv/versions/2.5.5/include/ruby-2.5.0/ruby/ruby.h:1021:23: note: expanded from macro 'RARRAY_LEN'
+#define RARRAY_LEN(a) rb_array_len(a)
+                      ^~~~~~~~~~~~~~~
+domain.c:4156:23: warning: comparison of integers of different signs: 'int' and 'unsigned int' [-Wsign-compare]
+        for (i = 0; i < nmountpoints; i++) {
+                    ~ ^ ~~~~~~~~~~~~
+domain.c:4194:24: warning: implicit conversion loses integer precision: 'long' to 'unsigned int' [-Wshorten-64-to-32]
+        nmountpoints = RARRAY_LEN(mountpoints);
+                     ~ ^~~~~~~~~~~~~~~~~~~~~~~
+/Users/yasu/.rbenv/versions/2.5.5/include/ruby-2.5.0/ruby/ruby.h:1021:23: note: expanded from macro 'RARRAY_LEN'
+#define RARRAY_LEN(a) rb_array_len(a)
+                      ^~~~~~~~~~~~~~~
+domain.c:4197:23: warning: comparison of integers of different signs: 'int' and 'unsigned int' [-Wsign-compare]
+        for (i = 0; i < nmountpoints; i++) {
+                    ~ ^ ~~~~~~~~~~~~
+domain.c:4227:23: warning: comparison of integers of different signs: 'int' and 'size_t' (aka 'unsigned long') [-Wsign-compare]
+        for (j = 0; j < e->info[i]->ndevAlias; j++) {
+                    ~ ^ ~~~~~~~~~~~~~~~~~~~~~
+11 warnings generated.
+compiling interface.c
+compiling network.c
+compiling nodedevice.c
+compiling nwfilter.c
+compiling secret.c
+compiling storage.c
+compiling stream.c
+stream.c:134:12: warning: implicit conversion loses integer precision: 'long' to 'int' [-Wshorten-64-to-32]
+    return RSTRING_LEN(buffer);
+    ~~~~~~ ^~~~~~~~~~~~~~~~~~~
+/Users/yasu/.rbenv/versions/2.5.5/include/ruby-2.5.0/ruby/ruby.h:975:6: note: expanded from macro 'RSTRING_LEN'
+     RSTRING_EMBED_LEN(str) : \
+     ^~~~~~~~~~~~~~~~~~~~~~
+/Users/yasu/.rbenv/versions/2.5.5/include/ruby-2.5.0/ruby/ruby.h:971:6: note: expanded from macro 'RSTRING_EMBED_LEN'
+     (long)((RBASIC(str)->flags >> RSTRING_EMBED_LEN_SHIFT) & \
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+stream.c:134:12: warning: implicit conversion loses integer precision: 'long' to 'int' [-Wshorten-64-to-32]
+    return RSTRING_LEN(buffer);
+    ~~~~~~ ^~~~~~~~~~~~~~~~~~~
+/Users/yasu/.rbenv/versions/2.5.5/include/ruby-2.5.0/ruby/ruby.h:976:28: note: expanded from macro 'RSTRING_LEN'
+     RSTRING(str)->as.heap.len)
+     ~~~~~~~~~~~~~~~~~~~~~~^~~
+2 warnings generated.
+linking shared-object _libvirt.bundle
+
+current directory: /Users/yasu/work/cloudinfra_api/vendor/bundle/ruby/2.5.0/gems/ruby-libvirt-0.7.1/ext/libvirt
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 _libvirt.bundle ./.gem.20191023-39092-1b1rjls
