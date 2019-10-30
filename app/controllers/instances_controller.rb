@@ -16,6 +16,10 @@ class InstancesController < ApplicationController
   # POST /instances
   def create
     @instance = Instance.new(instance_params)
+    connection = Fog::Compute.new(provider: 'libvirt',libvirt_uri: 'qemu+ssh://cloudinfra@10.0.0.2/system',libvirt_username: 'cloudinfra',libvirt_password: 'cloudinfra01')
+    connection.volumes
+    bootvm = connection.servers.find{|s| s.name == 'kvm_centos7'}
+    bootvm.start
 
     if @instance.save
       render json: @instance, status: :created, location: @instance
@@ -36,6 +40,7 @@ class InstancesController < ApplicationController
   # DELETE /instances/1
   def destroy
     @instance.destroy
+
   end
 
   private
