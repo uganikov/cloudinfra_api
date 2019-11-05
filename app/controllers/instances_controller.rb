@@ -1,5 +1,5 @@
 class InstancesController < ApplicationController
-  before_action :set_instance, only: [:show, :update, :destroy]
+  before_action :set_instance, only: [:show, :create, :update, :destroy]
 
   # GET /instances
   def index
@@ -16,11 +16,7 @@ class InstancesController < ApplicationController
   # POST /instances
   def create
     @instance = Instance.new(instance_params)
-    connection = Fog::Compute.new(provider: 'libvirt',libvirt_uri: 'qemu+ssh://cloudinfra@10.0.0.2/system',libvirt_username: 'cloudinfra',libvirt_password: 'cloudinfra01')
-    connection.volumes
-    bootvm = connection.servers.find{|s| s.name == 'kvm_centos7'}
-    bootvm.start
-
+      result = exec("sudo python python/send.py")
     if @instance.save
       render json: @instance, status: :created, location: @instance
     else
