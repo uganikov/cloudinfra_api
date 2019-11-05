@@ -1,12 +1,13 @@
 import pika
 import libvirt
 
-connection = pika.BlockingConnection(pika.ConnectionParameters(host='10.0.0.1'))
+connection = pika.BlockingConnection(pika.ConnectionParameters(host='localhost'))
 channel = connection.channel()
 channel.queue_declare(queue='pleaseCreate')
 
 def callback(ch, method, properties, body):
     print(" [x] Received %r" % body)
+    #あとでここをVM立ち上げに置き換える
     connect = libvirt.open("qemu:///system")
     for id in conn.listDomainsID():
         dom = conn.lookupByID(id)
