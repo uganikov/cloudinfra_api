@@ -1,6 +1,16 @@
 class InstancesController < ApplicationController
   before_action :set_instance, only: [:show, :create, :update, :destroy]
 
+  def enqueue(queue, params)
+    connection = Bunny.new(host: '10.0.0.2', vhost: '/', user: 'cloudinfra', password: 'cloudinfra')
+    connection.start
+    channel = connection.create_channel
+    queue = channel.queue(queue, durable: false)
+    queue.publish(JSON.generate(params), persistent:false)
+    channel.close
+    connection.close
+  end
+
   # GET /instances
   def index
     @instances = Instance.all
@@ -16,8 +26,8 @@ class InstancesController < ApplicationController
   # POST /instances
   def create
     @instance = Instance.new(instance_params)
-      result = exec("sudo python python/send.py")
     if @instance.save
+      enqueue('pleaseCreate', {instance_id: "i-#{@instance.public_uid}"})
       render json: @instance, status: :created, location: @instance
     else
       render json: @instance.errors, status: :unprocessable_entity
