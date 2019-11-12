@@ -7,6 +7,7 @@ fi
 network_addr=192.168.1.
 host_addr=$1
 shift
+instance_id=$1
 mask=24
 shift
 gw=254
@@ -23,4 +24,6 @@ nmcli c mod eth0 connection.autoconnect yes ipv4.method manual ipv4.addresses $n
 EOF
 umount $tmpdir
 rmdir $tmpdir
-echo $tmpfile
+chown cloudinfra:cloudinfra $tmpfile
+mv $tmpfile ./${instance_id}.meta
+echo ${instance_id}.meta
