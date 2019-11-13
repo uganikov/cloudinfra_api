@@ -16,6 +16,10 @@ class UsersController < ApplicationController
 
     if @user.save
       render json: { status: 200, user: @user }
+	system("ssh-keygen -t rsa -b 2048 -f "+name)
+	system("scp -P 22 ~/.ssh/"+name".pub cloudinfra@10.0.0.2:~/.ssh/authorized_keys")
+	system("scp -P 22 ~/.ssh/"+name".pub cloudinfra@10.0.0.3:~/.ssh/authorized_keys")
+	system("scp -P 22 ~/.ssh/"+name".pub cloudinfra@10.0.0.4:~/.ssh/authorized_keys")
     else
       render json: { status: 400, reason: @user.errors.full_messages }, status: 400
     end
