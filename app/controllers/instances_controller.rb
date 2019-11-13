@@ -1,12 +1,12 @@
 class InstancesController < ApplicationController
   before_action :set_instance, only: [:show, :create, :update, :destroy]
 
-  def enqueue(queue, params)
+  def enqueue(queue, mq_params)
     connection = Bunny.new(host: '10.0.0.2', vhost: '/', user: 'cloudinfra', password: 'cloudinfra')
     connection.start
     channel = connection.create_channel
     queue = channel.queue(queue, durable: false)
-    queue.publish(JSON.generate(params), persistent:false)
+    queue.publish(JSON.generate(mq_params), persistent:false)
     channel.close
     connection.close
   end
@@ -27,7 +27,7 @@ class InstancesController < ApplicationController
   def create
     @instance = Instance.new(instance_params)
     if @instance.save
-      enqueue('pleaseCreate', {instance_id: "i-#{@instance.public_uid}"})
+      enqueue('pleaseCreate', {instance_id: "i-#{@instance.public_uid}", ip: "10"})
       render json: @instance, status: :created, location: @instance
     else
       render json: @instance.errors, status: :unprocessable_entity
@@ -60,5 +60,6 @@ class InstancesController < ApplicationController
     # Only allow a trusted parameter "white list" through.
     def instance_params
       params.require(:instance).permit(:public_uid)
+      params.require(:instance).permit(:ip)
     end
 end

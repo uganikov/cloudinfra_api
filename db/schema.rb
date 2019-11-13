@@ -10,13 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_16_112027) do
+ActiveRecord::Schema.define(version: 2019_11_13_000028) do
 
   create_table "instances", force: :cascade do |t|
     t.string "public_uid", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "type"
+    t.boolean "status"
+    t.integer "ip"
+    t.index ["ip"], name: "index_instances_on_ip", unique: true
     t.index ["public_uid"], name: "index_instances_on_public_uid", unique: true
   end
 
