@@ -27,7 +27,7 @@ class InstancesController < ApplicationController
   def create
     @instance = Instance.new(instance_params)
     if @instance.save
-      enqueue('pleaseCreate', {instance_id: "i-#{@instance.public_uid}", ip: "10"})
+      enqueue('cloud_infra_api', {cmd: "create", instance_id: "i-#{@instance.public_uid}", ip: "10"})
       render json: @instance, status: :created, location: @instance
     else
       render json: @instance.errors, status: :unprocessable_entity
