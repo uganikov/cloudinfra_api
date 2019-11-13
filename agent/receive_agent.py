@@ -32,7 +32,6 @@ def callback(ch, method, properties, body):
         vm = connect.lookupByName(instance_id)
         print('starting'+vm.name())
         vm.create()
-    time.sleep(1)
 
 channel.basic_consume(callback, queue='cloud_infra_api', no_ack=True)
 
@@ -50,6 +49,12 @@ def pubsub_callback(ch, method, properties, body):
         connect = libvirt.open('qemu:///system')
         vm = connect.lookupByName(instance_id)
         print('show'+vm.name())
+    elif cmd == "destroy":
+        instance_id = params["instance_id"]
+        connect = libvirt.open('qemu:///system')
+        vm = connect.lookupByName(instance_id)
+        print('show'+vm.name())
+        vm.shutdown()
 
 channel.basic_consume(pubsub_callback, queue=queue_name, no_ack=True)
 

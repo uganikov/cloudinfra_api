@@ -39,7 +39,7 @@ class InstancesController < ApplicationController
   def create
     @instance = Instance.new(instance_params)
     if @instance.save
-      enqueue('cloud_infra_api', {cmd: "create", instance_id: "i-#{@instance.public_uid}", ip: "10"})
+      enqueue('cloud_infra_api', {cmd: "create", instance_id: "i-#{@instance.public_uid}", ip: @instance.ip.to_s})
       render json: @instance, status: :created, location: @instance
     else
       render json: @instance.errors, status: :unprocessable_entity
@@ -57,8 +57,8 @@ class InstancesController < ApplicationController
 
   # DELETE /instances/1
   def destroy
-    @instance.destroy
-
+    publish('cloud_infra_api_pubsub', {cmd: "destroy", instance_id: "i-#{@instance.public_uid}"})
+#    @instance.destroy
   end
 
   private
