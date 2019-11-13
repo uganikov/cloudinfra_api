@@ -44,10 +44,12 @@ channel.queue_bind(exchange='cloud_infra_api_pubsub', queue=queue_name)
 def pubsub_callback(ch, method, properties, body):
     print(' [x] Received %r' % body)
     params = json.loads(body)
-    instance_id = params["instance_id"]
-    ip = params["ip"]
-    print('  instance_id: ' + instance_id)
-    print('           ip: ' + ip)
+    cmd = params["cmd"]
+    if cmd == "show":
+        instance_id = params["instance_id"]
+        connect = libvirt.open('qemu:///system')
+        vm = connect.lookupByName(instance_id)
+        print('show'+vm.name())
 
 channel.basic_consume(pubsub_callback, queue=queue_name, no_ack=True)
 
