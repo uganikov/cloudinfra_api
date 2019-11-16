@@ -34,6 +34,13 @@ class Usagi
       Rails.application.executor.wrap do
         result_queue .subscribe do |delivery_info, properties, payload|
           puts "Received #{payload}, message properties are #{properties.inspect}"
+          params = JSON.parse(payload, {:symbolize_names => true})
+          case params[:msg]
+          when "status"
+            instance_id = params[:instance_id]
+            instance = Instance.find_by(public_uid: instance_id[2..-1])
+            instance.update(status: params[:state])
+          end
         end
       end
     end
