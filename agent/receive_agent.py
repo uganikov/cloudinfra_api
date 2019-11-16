@@ -8,7 +8,7 @@ import time
 connection = pika.BlockingConnection(pika.ConnectionParameters(host='10.0.0.1'))
 channel = connection.channel()
 channel.queue_declare(queue='cloud_infra_api')
-
+channel.queue_declare(queue='cloud_infra_api_result')
 
 def callback(ch, method, properties, body):
     print(' [x] Received %r' % body)
@@ -49,6 +49,7 @@ def pubsub_callback(ch, method, properties, body):
         connect = libvirt.open('qemu:///system')
         vm = connect.lookupByName(instance_id)
         print('show'+vm.name())
+        channel.basic_publish("", "cloud_infra_api_result", json.dumps({"name": vm.name()}))
     elif cmd == "destroy":
         instance_id = params["instance_id"]
         connect = libvirt.open('qemu:///system')
