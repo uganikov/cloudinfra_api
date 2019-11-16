@@ -38,7 +38,7 @@
     <emulator>/usr/libexec/qemu-kvm</emulator>
     <disk type='file' device='disk'>
       <driver name='qemu' type='qcow2'/>
-      <source file='/home/cloudinfra/akagaki_test/instance.qcow2'/>
+      <source file='@image_path@/instance.qcow2'/>
       <backingStore/>
       <target dev='vda' bus='virtio'/>
       <alias name='virtio-disk0'/>
@@ -46,7 +46,7 @@
     </disk>
     <disk type='file' device='disk'>
       <driver name='qemu' type='raw'/>
-      <source file='/home/cloudinfra/akagaki_test/@instance_id@.meta'/>
+      <source file='@image_path@/@instance_id@.meta'/>
       <backingStore/>
       <target dev='vdb' bus='virtio'/>
       <alias name='virtio-disk0'/>
