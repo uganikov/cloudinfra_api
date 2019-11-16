@@ -3,6 +3,10 @@ class ApplicationController < ActionController::API
 
   before_action :authenticate!
 
+  def mq
+    @mq ||= Usagi.new("10.0.0.1")    
+  end
+
   private
 
   def authenticate!

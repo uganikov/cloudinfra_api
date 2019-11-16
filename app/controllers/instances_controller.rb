@@ -1,27 +1,6 @@
 class InstancesController < ApplicationController
   before_action :set_instance, only: [:show, :create, :update, :destroy]
 
-  def enqueue(queue, mq_params)
-    connection = Bunny.new(host: '10.0.0.2', vhost: '/', user: 'cloudinfra', password: 'cloudinfra')
-    connection.start
-    channel = connection.create_channel
-    q = channel.queue(queue, durable: false)
-    q.publish(JSON.generate(mq_params), persistent:false)
-    channel.close
-    connection.close
-  end
-
-  def publish(exchange, mq_params)
-    connection = Bunny.new(host: '10.0.0.2', vhost: '/', user: 'cloudinfra', password: 'cloudinfra')
-    connection.start
-    channel = connection.create_channel
-    channel = connection.create_channel
-    ex = channel.fanout(exchange)
-    ex.publish(JSON.generate(mq_params))
-    channel.close
-    connection.close
-  end
-
   # GET /instances
   def index
     @instances = Instance.all
@@ -31,7 +10,7 @@ class InstancesController < ApplicationController
 
   # GET /instances/1
   def show
-    publish('cloud_infra_api_pubsub', {cmd: "show", instance_id: "i-#{@instance.public_uid}"})
+    mq.publish({cmd: "show", instance_id: "i-#{@instance.public_uid}"})
     render json: @instance
   end
 
@@ -39,7 +18,7 @@ class InstancesController < ApplicationController
   def create
     @instance = Instance.new(instance_params)
     if @instance.save
-      enqueue('cloud_infra_api', {cmd: "create", instance_id: "i-#{@instance.public_uid}", ip: @instance.ip.to_s})
+      mq.enqueue({cmd: "create", instance_id: "i-#{@instance.public_uid}", ip: @instance.ip.to_s})
       render json: @instance, status: :created, location: @instance
     else
       render json: @instance.errors, status: :unprocessable_entity
@@ -57,7 +36,7 @@ class InstancesController < ApplicationController
 
   # DELETE /instances/1
   def destroy
-    publish('cloud_infra_api_pubsub', {cmd: "destroy", instance_id: "i-#{@instance.public_uid}"})
+    mq.publish('cloud_infra_api_pubsub', {cmd: "destroy", instance_id: "i-#{@instance.public_uid}"})
 #    @instance.destroy
   end
 
