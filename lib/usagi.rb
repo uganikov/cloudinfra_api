@@ -21,7 +21,21 @@ class Usagi
     @cloudinfra_exchange ||= channel.fanout("cloud_infra_api_pubsub")
   end
 
+  def result_queue
+    @cloudinfra_result ||= channel.queue("cloud_infra_api_result", durable: false)
+  end
+
   def channel
     @chanel ||= @connection.create_channel
+  end
+
+  def start_consumer
+    Thread.new do
+      Rails.application.executor.wrap do
+        result_queue .subscribe do |delivery_info, properties, payload|
+          puts "Received #{payload}, message properties are #{properties.inspect}"
+        end
+      end
+    end
   end
 end
