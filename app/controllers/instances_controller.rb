@@ -18,7 +18,7 @@ class InstancesController < ApplicationController
   def create
     @instance = Instance.new(instance_params)
     if @instance.save
-      mq.enqueue({cmd: "create", instance_id: "i-#{@instance.public_uid}", ip: @instance.ip.to_s})
+      mq.enqueue({cmd: "create", instance_id: "i-#{@instance.public_uid}", ip: @instance.ip.to_s, identity_pub: current_user.identity_pub})
       render json: @instance, status: :created, location: @instance
     else
       render json: @instance.errors, status: :unprocessable_entity

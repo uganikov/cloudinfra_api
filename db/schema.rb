@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_13_000028) do
+ActiveRecord::Schema.define(version: 2019_11_17_130544) do
 
   create_table "instances", force: :cascade do |t|
     t.string "public_uid", null: false
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 2019_11_13_000028) do
     t.string "token"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "pkey"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["token"], name: "index_users_on_token", unique: true
   end
