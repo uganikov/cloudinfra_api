@@ -1,24 +1,13 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## ユーザ作成
+curl -X POST  -H 'Content-Type:application/json' -d '{ "name": "cloudinfra", "password": "cloudinfra01", "password_confirmation" : "cloudinfra01", "email" : "a1901sa@aiit.ac.jp"}' http://0.0.0.0:3000/users
 
-Things you may want to cover:
+## ログイン (APIトークン取得)
+curl -X POST  -H 'Content-Type:application/json' -d '{ "password": "cloudinfra01", "email" : "a1901sa@aiit.ac.jp"}' http://0.0.0.0:3000/users/login
 
-* Ruby version
+## インスタンス作成
+curl -X POST  -H 'Authorization: Token APIトークン' -H 'Content-Type:application/json' -d '{"type":"normal", "ip":"20"}' http://0.0.0.0:3000/instances
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## インスタンス停止
+curl -X DELETE -H 'Authorization: Token APIトークン' http://0.0.0.0:3000/instances/インスタンスID
