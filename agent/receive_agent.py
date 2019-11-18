@@ -90,18 +90,21 @@ def callback(ch, method, properties, body):
     print(' [x] Received %r' % body)
     params = json.loads(body)
     cmd = params["cmd"]
-    connect = libvirt.open('qemu:///system')
-
-    if cmd == "create":
-        create_instance(connect, params)
-    elif cmd == "destroy":
-        destroy_instance(connect, params)
-    elif cmd == "show":
-        show_instance(connect, params)
-    elif cmd == "start":
-        start_instance(connect, params)
-    elif cmd == "stop":
-        stop_instance(connect, params)
+    try:
+        connect = libvirt.open('qemu:///system')
+        if cmd == "create":
+            create_instance(connect, params)
+        elif cmd == "destroy":
+            destroy_instance(connect, params)
+        elif cmd == "show":
+            show_instance(connect, params)
+        elif cmd == "start":
+            start_instance(connect, params)
+        elif cmd == "stop":
+            stop_instance(connect, params)
+    except libvirt.libvirtError as e:
+        #pprint.pprint(vars(e))
+        pass
 
 channel.basic_consume(callback, queue='cloud_infra_api', no_ack=True)
 channel.exchange_declare(exchange='cloud_infra_api_pubsub', type='fanout')
