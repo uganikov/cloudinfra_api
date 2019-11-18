@@ -108,6 +108,6 @@ channel.exchange_declare(exchange='cloud_infra_api_pubsub', type='fanout')
 result = channel.queue_declare(exclusive=True)
 queue_name = result.method.queue
 channel.queue_bind(exchange='cloud_infra_api_pubsub', queue=queue_name)
-channel.basic_consume(pubsub_callback, queue=queue_name, no_ack=True)
+channel.basic_consume(callback, queue=queue_name, no_ack=True)
 
 channel.start_consuming()
