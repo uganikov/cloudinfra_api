@@ -9,7 +9,7 @@ import pprint
 
 connection = pika.BlockingConnection(pika.ConnectionParameters(host='10.0.0.1'))
 channel = connection.channel()
-channel.queue_declare(queue='cloud_infra_api')
+channel.queue_declare(queue='cloud_infra_api', durable=True)
 channel.queue_declare(queue='cloud_infra_api_result')
 
 def publish_instance_status(vm):
