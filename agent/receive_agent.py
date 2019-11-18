@@ -106,6 +106,7 @@ def callback(ch, method, properties, body):
         #pprint.pprint(vars(e))
         pass
 
+channel.basic_qos (prefetch_count = 1)
 channel.basic_consume(callback, queue='cloud_infra_api', no_ack=True)
 channel.exchange_declare(exchange='cloud_infra_api_pubsub', type='fanout')
 result = channel.queue_declare(exclusive=True)
