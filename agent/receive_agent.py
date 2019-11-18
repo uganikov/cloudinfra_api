@@ -35,7 +35,7 @@ def callback(ch, method, properties, body):
         print('  instance_id: ' + instance_id)
         print('           ip: ' + ip)
         print('copy image ' +  instance_id + ".qcow2")
-        with open(instance_id + ".pub") as f:
+        with open(instance_id + ".pub", "w") as f:
             f.write(params["identity_pub"])
         os.system("scp 10.0.0.1:/var/cloudinfra/imgs/instance.qcow2 " + instance_id + ".qcow2")
         params["identity_pub"]
