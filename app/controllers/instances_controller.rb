@@ -4,8 +4,15 @@ class InstancesController < ApplicationController
   # GET /instances
   def index
     @instances = Instance.all
-
     render json: @instances
+  end
+
+  # DELETE /instances
+  def destroy_all
+    Instance.all.each{|instance|
+      mq.publish({cmd: "destroy", instance_id: "i-#{instance.public_uid}"})
+    }
+    render json: {"deleteall":"success"}
   end
 
   # GET /instances/1
@@ -21,6 +28,9 @@ class InstancesController < ApplicationController
   # POST /instances
   def create
     @instance = Instance.new(instance_params)
+    p params
+    p instance_params
+    p @instance
     if @instance.save
       mq.enqueue({cmd: "create", instance_id: "i-#{@instance.public_uid}", ip: @instance.ip.to_s, identity_pub: current_user.identity_pub})
       render json: @instance, status: :created, location: @instance
@@ -64,8 +74,8 @@ class InstancesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def instance_params
-      params.require(:instance).permit(:public_uid)
-      params.require(:instance).permit(:ip)
-      params.require(:instance).permit(:status)
+      params.require(:instance).permit(:public_uid, :ip, :status)
+#      params.require(:instance).permit(:ip)
+#      params.require(:instance).permit(:status)
     end
 end
