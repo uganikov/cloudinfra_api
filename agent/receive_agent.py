@@ -48,11 +48,12 @@ def create_instance(connect, params):
     instance_id = params["instance_id"]
     ip = params["ip"]
     print('  instance_id: ' + instance_id)
+    print('         type: ' + params["type"])
     print('           ip: ' + ip)
     print('copy image ' +  instance_id + ".qcow2")
     with open(instance_id + ".pub", "w") as f:
         f.write(params["identity_pub"])
-    os.system("scp 10.0.0.1:/var/cloudinfra/imgs/instance.qcow2 " + instance_id + ".qcow2")
+    os.system("scp 10.0.0.1:/var/cloudinfra/imgs/" + params["type"] + ".qcow2 " + instance_id + ".qcow2")
     params["identity_pub"]
     fn = subprocess.check_output(["sudo", "bash", "./mkmeta.sh", ip, instance_id])
     os.system("sed -e 's/@instance_id@/" + instance_id + "/g' -e 's|@image_path@|" + os.getcwd() + "|g' template.xml > " + instance_id + ".xml")
