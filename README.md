@@ -13,4 +13,10 @@ curl -X GET -H 'Authorization: Token APIトークン' http://0.0.0.0:3000/user/i
 curl -X POST  -H 'Authorization: Token APIトークン' -H 'Content-Type:application/json' -d '{"type":"normal", "ip":"20"}' http://0.0.0.0:3000/instances
 
 ## インスタンス停止
+curl -X PUT -H 'Authorization: Token APIトークン' -application/json' -d '{"status":"0"}' http://0.0.0.0:3000/instances/インスタンスID
+
+## インスタンス開始
+curl -X PUT -H 'Authorization: Token APIトークン' -application/json' -d '{"status":"1"}' http://0.0.0.0:3000/instances/インスタンスID
+
+## インスタンス破棄
 curl -X DELETE -H 'Authorization: Token APIトークン' http://0.0.0.0:3000/instances/インスタンスID
