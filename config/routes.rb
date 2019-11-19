@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       post 'login'
     end
   end
+  post 'instances/scaling/:instanceNumber', :to => 'instances#scale'
   get :user, action: :index, controller: 'users'
   get 'user/identity', action: :identity, controller: 'users'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

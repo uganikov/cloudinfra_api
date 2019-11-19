@@ -39,6 +39,30 @@ class InstancesController < ApplicationController
     end
   end
 
+  # scaling method
+  def scale
+    render :text => ":instanceNumber ="+  params[:instanceNumber]
+  end
+
+  # POST /instances/scaling/[instanceNumber]
+  def create
+    @instanceNumber =  params[:instanceNumber]
+    num = @instanceNumber
+    put num.to_i
+    num.times do |timesCount|
+      @instance = Instance.new(instance_params)
+      p params
+      p instance_params
+      p @instance
+      if @instance.save
+        mq.enqueue({cmd: "create", instance_id: "i-#{@instance.public_uid}-#{timesCount}", ip: @instance.ip.to_s, identity_pub: current_user.identity_pub})
+        render json: @instance, status: :created, location: @instance
+      else
+        render json: @instance.errors, status: :unprocessable_entity
+      end
+    end
+  end
+
   # PATCH/PUT /instances/1
   def update
     if @instance.nil?

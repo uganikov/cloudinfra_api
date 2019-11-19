@@ -27,3 +27,6 @@ curl -X DELETE -H 'Authorization: Token APIトークン' http://0.0.0.0:3000/ins
 ## 全インスタンス破棄 (very experimental)
 curl -X DELETE -H 'Authorization: Token APIトークン' http://0.0.0.0:3000/instances  
 稼働中の全インスタンスを破棄する。なんの整合性の確認もとらないので注意
+
+## なんちゃってscaling
+curl -X POST  -H 'Authorization: Token APIトークン' -H 'Content-Type:application/json' -d '{"type":"instance", "ip":"20"}' http://0.0.0.0:3000/instances/scaling/立てたい数
