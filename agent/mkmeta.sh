@@ -21,7 +21,9 @@ mount -o loop -t ext3 $tmpfile $tmpdir
 cp ${instance_id}.pub $tmpdir
 cat <<EOF > $tmpdir/cloudinit.sh
 #!/bin/sh
-nmcli c mod eth0 connection.autoconnect yes ipv4.method manual ipv4.addresses $network_addr$host_addr/$mask ipv4.gateway ${network_addr}254
+nmcli c mod eth0 connection.autoconnect yes ipv4.method manual ipv4.addresses $network_addr$host_addr/$mask ipv4.gateway ${network_addr}1
+nmcli c mod eth0 ipv4.dns 8.8.8.8
+nmcli c down eth0; nmcli c up eth0
 mkdir -p /home/cloudinfra/.ssh/
 chown cloudinfra:cloudinfra /home/cloudinfra/.ssh/
 chmod 700 /home/cloudinfra/.ssh/
