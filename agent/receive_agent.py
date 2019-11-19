@@ -9,7 +9,7 @@ import pprint
 
 connection = pika.BlockingConnection(pika.ConnectionParameters(host='10.0.0.1'))
 channel = connection.channel()
-channel.queue_declare(queue='cloud_infra_api', durable=True)
+channel.queue_declare(queue='cloud_infra_api', durable=False)
 channel.queue_declare(queue='cloud_infra_api_result')
 
 def publish_instance_status(vm):
@@ -60,6 +60,8 @@ def create_instance(connect, params):
     xmlfile = open(instance_id + ".xml")
     xmldesc = xmlfile.read()
     xmlfile.close()
+    os.remove(instance_id + ".xml")
+    os.remove(instance_id + ".pub")
     connect.defineXML(xmldesc)
     vm = connect.lookupByName(instance_id)
     _start_instance(vm)
@@ -67,9 +69,13 @@ def create_instance(connect, params):
 def destroy_instance(connect, params):
     instance_id = params["instance_id"]
     vm = connect.lookupByName(instance_id)
-    _stop_instance(vm)
-    vm.undefineXML()
-    publish_instance_removed("instance_id")
+    vminfo = vm.info()
+    if vminfo[0] is 1:
+        _stop_instance(vm)
+    vm.undefine()
+    os.remove(instance_id + ".qcow2")
+    os.remove(instance_id + ".meta")
+    publish_instance_removed(instance_id)
 
 def start_instance(connect, params):
     instance_id = params["instance_id"]
@@ -106,7 +112,7 @@ def callback(ch, method, properties, body):
         #pprint.pprint(vars(e))
         pass
 
-channel.basic_qos (prefetch_count = 1)
+#channel.basic_qos (prefetch_count = 1)
 channel.basic_consume(callback, queue='cloud_infra_api', no_ack=True)
 channel.exchange_declare(exchange='cloud_infra_api_pubsub', type='fanout')
 result = channel.queue_declare(exclusive=True)
