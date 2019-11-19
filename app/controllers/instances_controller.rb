@@ -4,19 +4,33 @@ class InstancesController < ApplicationController
   # GET /instances
   def index
     @instances = Instance.all
-
     render json: @instances
+  end
+
+  # DELETE /instances
+  def destroy_all
+    Instance.all.each{|instance|
+      mq.publish({cmd: "destroy", instance_id: "i-#{instance.public_uid}"})
+    }
+    render json: {"deleteall":"success"}
   end
 
   # GET /instances/1
   def show
-    mq.publish({cmd: "show", instance_id: "i-#{@instance.public_uid}"})
-    render json: @instance
+    if @instance.nil?
+      render status: 404, json: {status: 404, instance_id: params[:id]}
+    else
+      mq.publish({cmd: "show", instance_id: "i-#{@instance.public_uid}"})
+      render json: @instance
+    end
   end
 
   # POST /instances
   def create
     @instance = Instance.new(instance_params)
+    p params
+    p instance_params
+    p @instance
     if @instance.save
       mq.enqueue({cmd: "create", instance_id: "i-#{@instance.public_uid}", ip: @instance.ip.to_s, identity_pub: current_user.identity_pub})
       render json: @instance, status: :created, location: @instance
@@ -27,17 +41,27 @@ class InstancesController < ApplicationController
 
   # PATCH/PUT /instances/1
   def update
-    if @instance.update(instance_params)
-      render json: @instance
+    if @instance.nil?
+      render status: 404, json: {status: 404, instance_id: params[:id]}
     else
-      render json: @instance.errors, status: :unprocessable_entity
+      status = instance_params[:status].to_i
+      if status == 0
+        mq.publish({cmd: "stop", instance_id: "i-#{@instance.public_uid}"})
+      elsif status == 1
+        mq.publish({cmd: "start", instance_id: "i-#{@instance.public_uid}"})
+      end
+      render json: @instance
     end
   end
 
   # DELETE /instances/1
   def destroy
-    mq.publish('cloud_infra_api_pubsub', {cmd: "destroy", instance_id: "i-#{@instance.public_uid}"})
-#    @instance.destroy
+    if @instance.nil?
+      render status: 404, json: {status: 404, instance_id: params[:id]}
+    else
+      mq.publish({cmd: "destroy", instance_id: "i-#{@instance.public_uid}"})
+      render json: {cmd: "destroy", instance_id: "i-#{@instance.public_uid}", status: "accepted"}
+    end
   end
 
   private
@@ -50,7 +74,8 @@ class InstancesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def instance_params
-      params.require(:instance).permit(:public_uid)
-      params.require(:instance).permit(:ip)
+      params.require(:instance).permit(:public_uid, :ip, :status)
+#      params.require(:instance).permit(:ip)
+#      params.require(:instance).permit(:status)
     end
 end

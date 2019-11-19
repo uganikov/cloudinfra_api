@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :instances
+  delete 'instances', action: :destroy_all, controller: 'instances'
   resources :users, only: [ :create ] do
     collection do
       post 'login'

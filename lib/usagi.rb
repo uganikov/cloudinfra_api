@@ -39,7 +39,11 @@ class Usagi
           when "status"
             instance_id = params[:instance_id]
             instance = Instance.find_by(public_uid: instance_id[2..-1])
-            instance.update(status: params[:state])
+            if params[:state].nil?
+              instance.destroy()
+            else
+              instance.update(status: params[:state])
+            end
           end
         end
       end
