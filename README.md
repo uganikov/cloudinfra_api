@@ -10,7 +10,9 @@ curl -X POST  -H 'Content-Type:application/json' -d '{ "password": "cloudinfra01
 curl -X GET -H 'Authorization: Token APIトークン' http://0.0.0.0:3000/user/identity
 
 ## インスタンス作成
-curl -X POST  -H 'Authorization: Token APIトークン' -H 'Content-Type:application/json' -d '{"type":"normal", "ip":"20"}' http://0.0.0.0:3000/instances
+curl -X POST  -H 'Authorization: Token APIトークン' -H 'Content-Type:application/json' -d '{"type":"instance", "ip":"20"}' http://0.0.0.0:3000/instances
+curl -X POST  -H 'Authorization: Token APIトークン' -H 'Content-Type:application/json' -d '{"type":"lb", "ip":"10"}' http://0.0.0.0:3000/instances
+curl -X POST  -H 'Authorization: Token APIトークン' -H 'Content-Type:application/json' -d '{"type":"worker", "ip":"100"}' http://0.0.0.0:3000/instances
 
 ## インスタンス停止
 curl -X PUT -H 'Authorization: Token APIトークン' -application/json' -d '{"status":"0"}' http://0.0.0.0:3000/instances/インスタンスID
