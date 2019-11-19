@@ -20,3 +20,8 @@ curl -X PUT -H 'Authorization: Token APIトークン' -application/json' -d '{"s
 
 ## インスタンス破棄
 curl -X DELETE -H 'Authorization: Token APIトークン' http://0.0.0.0:3000/instances/インスタンスID
+稼働中のインスタンスは停止してから破棄を行うため、稼働中のインスタンスに対して実行してもエラーとはならない
+
+## 全インスタンス破棄 (very experimental)
+curl -X DELETE -H 'Authorization: Token APIトークン' http://0.0.0.0:3000/instances
+稼働中の全インスタンスを破棄する。なんの整合性の確認もとらないので注意
