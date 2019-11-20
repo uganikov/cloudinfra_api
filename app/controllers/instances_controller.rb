@@ -27,12 +27,14 @@ class InstancesController < ApplicationController
 
   # POST /instances
   def create
-    @instance = Instance.new(instance_params)
-    p params
-    p instance_params
-    p @instance
+    @instance = Instance.new({ip: instance_create_params[:ip]})
     if @instance.save
-      mq.enqueue({cmd: "create", instance_id: "i-#{@instance.public_uid}", ip: @instance.ip.to_s, identity_pub: current_user.identity_pub})
+      params = instance_create_params.permit!.to_hash
+      params[:cmd] = "create"
+      params[:instance_id] = "i-#{@instance.public_uid}"
+      params[:identity_pub] = current_user.identity_pub
+p params
+      mq.enqueue(params)
       render json: @instance, status: :created, location: @instance
     else
       render json: @instance.errors, status: :unprocessable_entity
@@ -40,27 +42,21 @@ class InstancesController < ApplicationController
   end
 
   # scaling method
-  def scale
-    render :text => ":instanceNumber ="+  params[:instanceNumber]
-  end
-
   # POST /instances/scaling/[instanceNumber]
-  def create
+  # to use this method, ip and instance_uid must be adjusted for each individual instance
+  # generally, this function will be implemented by other shellscript by using create/destory API.
+  # please see the lecture slide deck.
+  def scale
     @instanceNumber =  params[:instanceNumber]
     num = @instanceNumber
     put num.to_i
     num.times do |timesCount|
       @instance = Instance.new(instance_params)
-      p params
-      p instance_params
-      p @instance
       if @instance.save
         mq.enqueue({cmd: "create", instance_id: "i-#{@instance.public_uid}-#{timesCount}", ip: @instance.ip.to_s, identity_pub: current_user.identity_pub})
-        render json: @instance, status: :created, location: @instance
-      else
-        render json: @instance.errors, status: :unprocessable_entity
       end
     end
+    render :text => ":instanceNumber ="+  params[:instanceNumber]
   end
 
   # PATCH/PUT /instances/1
@@ -98,8 +94,10 @@ class InstancesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def instance_params
-      params.require(:instance).permit(:public_uid, :ip, :status)
-#      params.require(:instance).permit(:ip)
-#      params.require(:instance).permit(:status)
+      params.require(:instance).permit(:public_uid, :status)
+    end
+
+    def instance_create_params
+      params.require(:instance).permit(:ip, :type)
     end
 end
