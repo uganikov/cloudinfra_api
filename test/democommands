@@ -1,0 +1,50 @@
+インスタンス立ち上げ
+curl -X POST -H 'Authorization: Token YgApXaNhN2NzgQvhCFuKFXuW' -H 'Content-Type:application/json' -d '{"type": "instance", "ip":"20"}' http://0.0.0.0:3000/instances
+ssh -i identity.test 192.168.1.20
+
+ワーカー立ち上げ
+curl -X POST -H 'Authorization: Token YgApXaNhN2NzgQvhCFuKFXuW' -H 'Content-Type:application/json' -d '{"type": "worker", "ip":"100"}' http://0.0.0.0:3000/instances
+curl http://192.168.1.100/test.shtml
+curl http://192.168.1.100/test.shtml
+
+LB立ち上げ
+curl -X POST -H 'Authorization: Token YgApXaNhN2NzgQvhCFuKFXuW' -H 'Content-Type:application/json' -d '{"type": "lb", "ip":"10"}' http://0.0.0.0:3000/instances
+curl http://192.168.1.10/test.shtml
+
+次のワーカー立ち上げ
+curl -X POST -H 'Authorization: Token YgApXaNhN2NzgQvhCFuKFXuW' -H 'Content-Type:application/json' -d '{"type": "worker", "ip":"101"}' http://0.0.0.0:3000/instances
+curl http://192.168.1.10/test.shtml
+curl http://192.168.1.10/test.shtml
+
+
+次のワーカー立ち上げ
+curl -X POST -H 'Authorization: Token YgApXaNhN2NzgQvhCFuKFXuW' -H 'Content-Type:application/json' -d '{"type": "worker", "ip":"102"}' http://0.0.0.0:3000/instances
+curl http://192.168.1.10/test.shtml
+curl http://192.168.1.10/test.shtml
+
+ワーカーいっぱい
+curl -X POST -H 'Authorization: Token YgApXaNhN2NzgQvhCFuKFXuW' -H 'Content-Type:application/json' -d '{"type": "worker", "ip":"103"}' http://0.0.0.0:3000/instances
+curl -X POST -H 'Authorization: Token YgApXaNhN2NzgQvhCFuKFXuW' -H 'Content-Type:application/json' -d '{"type": "worker", "ip":"104"}' http://0.0.0.0:3000/instances
+curl -X POST -H 'Authorization: Token YgApXaNhN2NzgQvhCFuKFXuW' -H 'Content-Type:application/json' -d '{"type": "worker", "ip":"105"}' http://0.0.0.0:3000/instances
+curl -X POST -H 'Authorization: Token YgApXaNhN2NzgQvhCFuKFXuW' -H 'Content-Type:application/json' -d '{"type": "worker", "ip":"106"}' http://0.0.0.0:3000/instances
+curl -X POST -H 'Authorization: Token YgApXaNhN2NzgQvhCFuKFXuW' -H 'Content-Type:application/json' -d '{"type": "worker", "ip":"107"}' http://0.0.0.0:3000/instances
+curl -X POST -H 'Authorization: Token YgApXaNhN2NzgQvhCFuKFXuW' -H 'Content-Type:application/json' -d '{"type": "worker", "ip":"108"}' http://0.0.0.0:3000/instances
+curl -X POST -H 'Authorization: Token YgApXaNhN2NzgQvhCFuKFXuW' -H 'Content-Type:application/json' -d '{"type": "worker", "ip":"109"}' http://0.0.0.0:3000/instances
+curl -X POST -H 'Authorization: Token YgApXaNhN2NzgQvhCFuKFXuW' -H 'Content-Type:application/json' -d '{"type": "worker", "ip":"110"}' http://0.0.0.0:3000/instances
+curl http://192.168.1.10/test.shtml
+curl http://192.168.1.10/test.shtml
+curl http://192.168.1.10/test.shtml
+curl http://192.168.1.10/test.shtml
+
+
+
+ワーカー何台か消す
+curl -X DELETE -H 'Authorization: Token YgApXaNhN2NzgQvhCFuKFXuW' -H 'Content-Type:application/json' http://0.0.0.0:3000/instances/iid
+curl -X DELETE -H 'Authorization: Token YgApXaNhN2NzgQvhCFuKFXuW' -H 'Content-Type:application/json' http://0.0.0.0:3000/instances/iid
+curl -X DELETE -H 'Authorization: Token YgApXaNhN2NzgQvhCFuKFXuW' -H 'Content-Type:application/json' http://0.0.0.0:3000/instances/iid
+curl http://192.168.1.10/test.shtml
+curl http://192.168.1.10/test.shtml
+curl http://192.168.1.10/test.shtml
+
+クリア
+curl -X DELETE -H 'Authorization: Token YgApXaNhN2NzgQvhCFuKFXuW' -H 'Content-Type:application/json' http://0.0.0.0:3000/instances
